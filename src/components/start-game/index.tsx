@@ -1,14 +1,21 @@
 import clsx from "clsx";
 import Logo from "/src/assets/logo.svg";
+import { useStateContext } from "../../utils/use-state-context";
+import { useShuffle } from "../../utils/useShuffle";
 
-function StartGame(props: {
-  theme: boolean;
-  setTheme: (status: boolean) => void;
-  numberOfPlayer: number;
-  setNumberOfPlayer: (status: number) => void;
-  gridSize: boolean;
-  SetGridSize: (status: boolean) => void;
-}) {
+function StartGameMenu() {
+  const {
+    theme,
+    setTheme,
+    numberOfPlayer,
+    setNumberOfPlayer,
+    gridSize,
+    SetGridSize,
+    setStartGame,
+  } = useStateContext();
+
+  const { shuffle } = useShuffle();
+
   return (
     <div className="bg-[#152938] flex flex-col items-center justify-center h-[100vh] w-[100vw] px-[1rem]">
       <img className="md:mb-[5rem] mb-[3rem]" src={Logo} alt="Logo" />
@@ -20,12 +27,12 @@ function StartGame(props: {
           <div className="md:gap-[1.9rem] flex gap-[0.8rem]">
             <button
               onClick={() => {
-                props.setTheme(false);
+                setTheme("numbers");
               }}
               className={clsx(
-                props.theme
-                  ? "bg-[#BCCED9] hover:bg-[#6395B8]"
-                  : "bg-[#304859]",
+                theme === "numbers"
+                  ? "bg-[#304859]"
+                  : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[16rem] max-w-[8.4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
               )}
             >
@@ -33,10 +40,10 @@ function StartGame(props: {
             </button>
             <button
               onClick={() => {
-                props.setTheme(true);
+                setTheme("icons");
               }}
               className={clsx(
-                props.theme
+                theme === "icons"
                   ? "bg-[#304859]"
                   : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[16rem] max-w-[8.4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
@@ -53,10 +60,10 @@ function StartGame(props: {
           <div className="md:gap-[1.4rem] flex gap-[0.8rem]">
             <button
               onClick={() => {
-                props.setNumberOfPlayer(1);
+                setNumberOfPlayer(1);
               }}
               className={clsx(
-                props.numberOfPlayer === 1
+                numberOfPlayer === 1
                   ? "bg-[#304859]"
                   : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[7.6rem] max-w-[4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
@@ -66,10 +73,10 @@ function StartGame(props: {
             </button>
             <button
               onClick={() => {
-                props.setNumberOfPlayer(2);
+                setNumberOfPlayer(2);
               }}
               className={clsx(
-                props.numberOfPlayer === 2
+                numberOfPlayer === 2
                   ? "bg-[#304859]"
                   : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[7.6rem] max-w-[4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
@@ -79,10 +86,10 @@ function StartGame(props: {
             </button>
             <button
               onClick={() => {
-                props.setNumberOfPlayer(3);
+                setNumberOfPlayer(3);
               }}
               className={clsx(
-                props.numberOfPlayer === 3
+                numberOfPlayer === 3
                   ? "bg-[#304859]"
                   : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[7.6rem] max-w-[4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
@@ -92,10 +99,10 @@ function StartGame(props: {
             </button>
             <button
               onClick={() => {
-                props.setNumberOfPlayer(4);
+                setNumberOfPlayer(4);
               }}
               className={clsx(
-                props.numberOfPlayer === 4
+                numberOfPlayer === 4
                   ? "bg-[#304859]"
                   : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[7.6rem] max-w-[4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
@@ -112,12 +119,12 @@ function StartGame(props: {
           <div className="md:gap-[1.9rem] flex gap-[0.8rem]">
             <button
               onClick={() => {
-                props.SetGridSize(false);
+                SetGridSize("4x4");
               }}
               className={clsx(
-                props.gridSize
-                  ? "bg-[#BCCED9] hover:bg-[#6395B8]"
-                  : "bg-[#304859]",
+                gridSize === "4x4"
+                  ? "bg-[#304859]"
+                  : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[16rem] max-w-[8.4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
               )}
             >
@@ -125,10 +132,10 @@ function StartGame(props: {
             </button>
             <button
               onClick={() => {
-                props.SetGridSize(true);
+                SetGridSize("6x6");
               }}
               className={clsx(
-                props.gridSize
+                gridSize === "6x6"
                   ? "bg-[#304859]"
                   : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[16rem] max-w-[8.4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
@@ -138,7 +145,13 @@ function StartGame(props: {
             </button>
           </div>
         </div>
-        <button className="md:text-[2rem] md:leading-[2.5rem] md:max-w-[33.81rem] bg-[#FDA214] max-w-[17.45rem] w-full p-[0.65rem] text-[1.15rem] leading-[1.4rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none hover:bg-[#FFB84A] transition-all duration-300">
+        <button
+          onClick={() => {
+            setStartGame(true);
+            shuffle();
+          }}
+          className="md:text-[2rem] md:leading-[2.5rem] md:max-w-[33.81rem] bg-[#FDA214] max-w-[17.45rem] w-full p-[0.65rem] text-[1.15rem] leading-[1.4rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none hover:bg-[#FFB84A] transition-all duration-300"
+        >
           Start Game
         </button>
       </div>
@@ -146,4 +159,4 @@ function StartGame(props: {
   );
 }
 
-export default StartGame;
+export default StartGameMenu;

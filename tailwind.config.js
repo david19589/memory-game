@@ -12,6 +12,8 @@ export default {
       ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
       pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       bounce: "bounce 1s infinite",
+      shrink: "shrink 0.1s ease-out forwards",
+      expand: "expand 0.1s ease-in forwards",
     },
     aria: {
       busy: 'busy="true"',
@@ -603,6 +605,14 @@ export default {
           animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
         },
       },
+      shrink: {
+        "0%": { transform: "scale(1)" },
+        "100%": { transform: "scale(0)" },
+      },
+      expand: {
+        "0%": { transform: "scale(0)" },
+        "100%": { transform: "scale(1)" },
+      },
     },
     letterSpacing: {
       tighter: "-0.05em",
@@ -823,7 +833,7 @@ export default {
       150: "1.5",
     },
     screens: {
-      sm: "352px",
+      sm: "375px",
       md: "768px",
       lg: "1440px",
     },

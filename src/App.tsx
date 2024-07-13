@@ -1,21 +1,23 @@
-import { useState } from "react";
-import StartGame from "./components/start-game";
+import StartGameMenu from "./components/start-game";
+import GameStarted from "./components/game-started";
+import { StateProvider } from "./utils/state-provider";
+import { useStateContext } from "./utils/use-state-context";
 
 function App() {
-  const [theme, setTheme] = useState(false);
-  const [numberOfPlayer, setNumberOfPlayer] = useState(1);
-  const [gridSize, SetGridSize] = useState(false);
+  return (
+    <StateProvider>
+      <MainComponent />
+    </StateProvider>
+  );
+}
+
+function MainComponent() {
+  const { startGame } = useStateContext();
 
   return (
     <div>
-      <StartGame
-        theme={theme}
-        setTheme={setTheme}
-        numberOfPlayer={numberOfPlayer}
-        setNumberOfPlayer={setNumberOfPlayer}
-        gridSize={gridSize}
-        SetGridSize={SetGridSize}
-      />
+      {!startGame && <StartGameMenu />}
+      {startGame && <GameStarted />}
     </div>
   );
 }
