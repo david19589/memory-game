@@ -2,23 +2,22 @@ import { useEffect } from "react";
 import { useStateContext } from "../use-state-context";
 
 function Timer() {
-  const { startGame, time, setTime } = useStateContext();
+  const { time, setTime, gameIsOver, showMenu } = useStateContext();
 
   useEffect(() => {
     let timer: number | undefined;
 
-    if (startGame) {
-      timer = window.setInterval(() => {
+    if (!gameIsOver && !showMenu) {
+      timer = setInterval(() => {
         setTime(time + 1);
       }, 1000);
     } else {
       clearInterval(timer);
     }
-
     return () => {
       clearInterval(timer);
     };
-  }, [setTime, startGame, time]);
+  }, [gameIsOver, setTime, showMenu, time]);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;

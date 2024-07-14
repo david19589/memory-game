@@ -7,8 +7,8 @@ function StartGameMenu() {
   const {
     theme,
     setTheme,
-    numberOfPlayer,
-    setNumberOfPlayer,
+    numberOfPlayers,
+    setNumberOfPlayers,
     gridSize,
     SetGridSize,
     setStartGame,
@@ -60,10 +60,10 @@ function StartGameMenu() {
           <div className="md:gap-[1.4rem] flex gap-[0.8rem]">
             <button
               onClick={() => {
-                setNumberOfPlayer(1);
+                setNumberOfPlayers(1);
               }}
               className={clsx(
-                numberOfPlayer === 1
+                numberOfPlayers === 1
                   ? "bg-[#304859]"
                   : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[7.6rem] max-w-[4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
@@ -73,10 +73,10 @@ function StartGameMenu() {
             </button>
             <button
               onClick={() => {
-                setNumberOfPlayer(2);
+                setNumberOfPlayers(2);
               }}
               className={clsx(
-                numberOfPlayer === 2
+                numberOfPlayers === 2
                   ? "bg-[#304859]"
                   : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[7.6rem] max-w-[4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
@@ -86,10 +86,10 @@ function StartGameMenu() {
             </button>
             <button
               onClick={() => {
-                setNumberOfPlayer(3);
+                setNumberOfPlayers(3);
               }}
               className={clsx(
-                numberOfPlayer === 3
+                numberOfPlayers === 3
                   ? "bg-[#304859]"
                   : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[7.6rem] max-w-[4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"
@@ -99,10 +99,10 @@ function StartGameMenu() {
             </button>
             <button
               onClick={() => {
-                setNumberOfPlayer(4);
+                setNumberOfPlayers(4);
               }}
               className={clsx(
-                numberOfPlayer === 4
+                numberOfPlayers === 4
                   ? "bg-[#304859]"
                   : "bg-[#BCCED9] hover:bg-[#6395B8]",
                 "md:text-[1.65rem] md:leading-[2rem] md:max-w-[7.6rem] max-w-[4rem] w-full p-[0.65rem] text-[1rem] leading-[1.2rem] font-[700] text-[#FCFCFC] text-center rounded-full outline-none transition-all duration-300"

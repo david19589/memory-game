@@ -4,8 +4,8 @@ import { GameItem } from "../utils/use-state-context";
 export interface StateContextProps {
   theme: string;
   setTheme: (status: string) => void;
-  numberOfPlayer: number;
-  setNumberOfPlayer: (status: number) => void;
+  numberOfPlayers: number;
+  setNumberOfPlayers: (status: number) => void;
   gridSize: string;
   SetGridSize: (status: string) => void;
   startGame: boolean;
@@ -22,6 +22,14 @@ export interface StateContextProps {
   setDisabled: (status: boolean) => void;
   time: number;
   setTime: (status: number) => void;
+  gameIsOver: boolean;
+  setGameIsOver: (status: boolean) => void;
+  moves: number;
+  setMoves: (status: number) => void;
+  showMenu: boolean;
+  setShowMenu: (status: boolean) => void;
+  score: number;
+  setScore: (status: number) => void;
 }
 const StateContext = createContext<StateContextProps | undefined>(undefined);
 
