@@ -16,7 +16,7 @@ export function StateProvider({ children }: { children: ReactNode }) {
   const [gameIsOver, setGameIsOver] = useState(false);
   const [moves, setMoves] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState([0, 0, 0, 0]);
 
   return (
     <StateContext.Provider

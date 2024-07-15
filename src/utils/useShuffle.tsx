@@ -1,7 +1,7 @@
 import { useStateContext, GameItem } from "./use-state-context";
 
 export const useShuffle = () => {
-  const { setItems, setTurn, theme, gridSize } = useStateContext();
+  const { setItems, setTurn, theme, gridSize, setScore } = useStateContext();
 
   const shuffle = () => {
     let items;
@@ -20,7 +20,8 @@ export const useShuffle = () => {
       .sort(() => Math.random() - 0.5)
       .map((item, index) => ({ ...item, id: index + 1 }));
     setItems(shuffledItems);
-    setTurn(0);
+    setTurn(1);
+    setScore(Array(4).fill(0));
   };
   return { shuffle };
 };

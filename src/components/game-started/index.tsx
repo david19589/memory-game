@@ -74,7 +74,7 @@ function GameStarted() {
         setTimeout(resetTurns, 1000);
       }
     }
-  }, [firstChoice, secondChoice, resetTurns, setItems, setMoves]);
+  }, [firstChoice, resetTurns, secondChoice, setItems, setMoves]);
 
   return (
     <div className="md:px-[2.5rem] bg-[#FCFCFC] flex flex-col items-center h-[100vh] w-[100vw] px-[1rem] pt-[1.5rem] mb-[5rem]">

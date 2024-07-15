@@ -28,8 +28,8 @@ export interface StateContextProps {
   setMoves: (status: number) => void;
   showMenu: boolean;
   setShowMenu: (status: boolean) => void;
-  score: number;
-  setScore: (status: number) => void;
+  score: number[];
+  setScore: (status: number[]) => void;
 }
 const StateContext = createContext<StateContextProps | undefined>(undefined);
 

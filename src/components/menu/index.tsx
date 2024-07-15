@@ -13,6 +13,7 @@ function Menu() {
     showMenu,
     setShowMenu,
     setTurn,
+    setScore,
   } = useStateContext();
 
   const { shuffle } = useShuffle();
@@ -27,6 +28,7 @@ function Menu() {
     setNumberOfPlayers(1);
     SetGridSize("4x4");
     setTurn(1);
+    setScore(Array(4).fill(0));
     shuffle();
   };
 
@@ -36,6 +38,7 @@ function Menu() {
     setFirstChoice(null);
     setMoves(0);
     setTurn(1);
+    setScore(Array(4).fill(0));
     shuffle();
   };
 
