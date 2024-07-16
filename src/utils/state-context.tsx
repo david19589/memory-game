@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
 import { GameItem } from "../utils/use-state-context";
 
 export interface StateContextProps {
@@ -11,7 +11,7 @@ export interface StateContextProps {
   startGame: boolean;
   setStartGame: (status: boolean) => void;
   items: GameItem[];
-  setItems: (status: GameItem[]) => void;
+  setItems: Dispatch<SetStateAction<GameItem[]>>;
   turn: number;
   setTurn: (status: number) => void;
   firstChoice: GameItem | null;
@@ -21,15 +21,15 @@ export interface StateContextProps {
   disabled: boolean;
   setDisabled: (status: boolean) => void;
   time: number;
-  setTime: (status: number) => void;
+  setTime: Dispatch<SetStateAction<number>>;
   gameIsOver: boolean;
   setGameIsOver: (status: boolean) => void;
   moves: number;
-  setMoves: (status: number) => void;
+  setMoves: Dispatch<SetStateAction<number>>;
   showMenu: boolean;
   setShowMenu: (status: boolean) => void;
   score: number[];
-  setScore: (status: number[]) => void;
+  setScore: Dispatch<SetStateAction<number[]>>;
 }
 const StateContext = createContext<StateContextProps | undefined>(undefined);
 

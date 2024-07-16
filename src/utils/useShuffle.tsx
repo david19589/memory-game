@@ -1,10 +1,22 @@
 import { useStateContext, GameItem } from "./use-state-context";
 
+interface ImageItem {
+  src: string;
+  matched: boolean;
+}
+
+interface NumberItem {
+  number: number;
+  matched: boolean;
+}
+
+type itemType = ImageItem | NumberItem;
+
 export const useShuffle = () => {
   const { setItems, setTurn, theme, gridSize, setScore } = useStateContext();
 
   const shuffle = () => {
-    let items;
+    let items: itemType[];
     if (theme === "icons") {
       items =
         gridSize === "6x6"

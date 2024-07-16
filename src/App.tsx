@@ -14,12 +14,7 @@ function App() {
 function MainComponent() {
   const { startGame } = useStateContext();
 
-  return (
-    <div>
-      {!startGame && <StartGameMenu />}
-      {startGame && <GameStarted />}
-    </div>
-  );
+  return <div>{startGame ? <GameStarted /> : <StartGameMenu />}</div>;
 }
 
 export default App;

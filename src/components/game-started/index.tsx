@@ -48,7 +48,7 @@ function GameStarted() {
   useEffect(() => {
     if (firstChoice && secondChoice) {
       setDisabled(true);
-      setMoves((preMoves: number) => preMoves + 1);
+      setMoves((preMoves) => preMoves + 1);
       if (
         (firstChoice.src &&
           secondChoice.src &&
@@ -57,7 +57,7 @@ function GameStarted() {
           secondChoice.number &&
           firstChoice.number === secondChoice.number)
       ) {
-        setItems((prevItems: GameItem[]) => {
+        setItems((prevItems) => {
           return prevItems.map((item) => {
             if (
               (item.src && item.src === firstChoice.src) ||
@@ -77,7 +77,7 @@ function GameStarted() {
   }, [firstChoice, resetTurns, secondChoice, setItems, setMoves]);
 
   return (
-    <div className="md:px-[2.5rem] bg-[#FCFCFC] flex flex-col items-center h-[100vh] w-[100vw] px-[1rem] pt-[1.5rem] mb-[5rem]">
+    <div className="md:px-[2.5rem] bg-commonColor5 flex flex-col items-center h-[100vh] w-[100vw] px-[1rem] pt-[1.5rem] mb-[5rem]">
       <div className="flex items-center justify-between w-full max-w-[90rem] mb-[4rem]">
         <img src={Logo} alt="Logo" />
         <Menu />
@@ -93,11 +93,11 @@ function GameStarted() {
             onClick={() => handleClick(item)}
             key={item.id}
             className={clsx(
-              item.matched && "bg-[#FDA214]",
+              item.matched && "bg-commonColor",
               gridSize === "4x4"
                 ? "md:w-[7rem] md:h-[7rem] sm:w-[4.5rem] sm:h-[4.5rem] w-[3.5rem] h-[3.5rem]"
                 : "md:w-[5rem] md:h-[5rem] sm:w-[3rem] sm:h-[3rem] w-[2.5rem] h-[2.5rem]",
-              "flex justify-center items-center bg-[#BCCED9] rounded-full transition-all duration-500"
+              "flex justify-center items-center bg-commonColor7 rounded-full transition-all duration-500"
             )}
           >
             <span
@@ -109,7 +109,7 @@ function GameStarted() {
                 gridSize === "4x4"
                   ? "md:w-[7rem] md:h-[7rem] sm:w-[4.5rem] sm:h-[4.5rem] w-[3.5rem] h-[3.5rem]"
                   : "md:w-[5rem] md:h-[5rem] sm:w-[3rem] sm:h-[3rem] w-[2.5rem] h-[2.5rem]",
-                "flex bg-[#304859] hover:bg-[#6395B8] absolute rounded-full transition-all duration-300"
+                "flex bg-commonColor8 hover:bg-commonColor6 absolute rounded-full transition-all duration-300"
               )}
             ></span>
             {theme === "icons" && item.src ? (
@@ -128,7 +128,7 @@ function GameStarted() {
                   gridSize === "4x4"
                     ? "md:text-[3.5rem] sm:text-[2.5rem] text-[2rem]"
                     : "md:text-[2.5rem] sm:text-[1.5rem] text-[1rem]",
-                  "font-[700] leading-[2rem] text-[#FCFCFC] cursor-default"
+                  "font-[700] leading-[2rem] text-commonColor5 cursor-default"
                 )}
               >
                 {item.number}
@@ -140,11 +140,11 @@ function GameStarted() {
       {numberOfPlayers === 1 && (
         <div className="w-full flex justify-center gap-[1.5rem]">
           <Timer />
-          <div className="md:max-w-[16rem] md:flex-row md:justify-between md:items-center md:px-[1.5rem] md:py-[1.1rem] max-w-[9.5rem] flex flex-col items-center w-full p-[0.65rem] rounded-lg bg-[#DFE7EC]">
-            <h3 className="md:text-[1.15rem] text-[1rem] leading-[1.2rem] font-[700] text-[#7191A5]">
+          <div className="md:max-w-[16rem] md:flex-row md:justify-between md:items-center md:px-[1.5rem] md:py-[1.1rem] max-w-[9.5rem] flex flex-col items-center w-full p-[0.65rem] rounded-lg bg-commonColor4">
+            <h3 className="md:text-[1.15rem] text-[1rem] leading-[1.2rem] font-[700] text-commonColor3">
               Moves
             </h3>
-            <span className="md:text-[2rem] text-[1.5rem] leading-[1.9rem] font-[700] text-[#304859]">
+            <span className="md:text-[2rem] text-[1.5rem] leading-[1.9rem] font-[700] text-commonColor8">
               {moves}
             </span>
           </div>
