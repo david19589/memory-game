@@ -1,4 +1,5 @@
 import { useStateContext, GameItem } from "./use-state-context";
+import images from "./img-data";
 
 interface ImageItem {
   src: string;
@@ -39,35 +40,35 @@ export const useShuffle = () => {
 };
 
 const gameImages = [
-  { src: "/src/assets/atom-solid.svg", matched: false },
-  { src: "/src/assets/baseball-bat-ball-solid.svg", matched: false },
-  { src: "/src/assets/bowling-ball-solid.svg", matched: false },
-  { src: "/src/assets/droplet-solid.svg", matched: false },
-  { src: "/src/assets/fan-solid.svg", matched: false },
-  { src: "/src/assets/gear-solid.svg", matched: false },
-  { src: "/src/assets/meteor-solid.svg", matched: false },
-  { src: "/src/assets/moon-solid.svg", matched: false },
+  { src: images.atom, matched: false },
+  { src: images.baseball, matched: false },
+  { src: images.bowling, matched: false },
+  { src: images.droplet, matched: false },
+  { src: images.fan, matched: false },
+  { src: images.gear, matched: false },
+  { src: images.meteor, matched: false },
+  { src: images.moon, matched: false },
 ];
 
 const gameImages6x6 = [
-  { src: "/src/assets/atom-solid.svg", matched: false },
-  { src: "/src/assets/baseball-bat-ball-solid.svg", matched: false },
-  { src: "/src/assets/bowling-ball-solid.svg", matched: false },
-  { src: "/src/assets/droplet-solid.svg", matched: false },
-  { src: "/src/assets/fan-solid.svg", matched: false },
-  { src: "/src/assets/gear-solid.svg", matched: false },
-  { src: "/src/assets/meteor-solid.svg", matched: false },
-  { src: "/src/assets/moon-solid.svg", matched: false },
-  { src: "/src/assets/satellite-solid.svg", matched: false },
-  { src: "/src/assets/seedling-solid.svg", matched: false },
-  { src: "/src/assets/shield-solid.svg", matched: false },
-  { src: "/src/assets/shuttle-space-solid.svg", matched: false },
-  { src: "/src/assets/snowflake-solid.svg", matched: false },
-  { src: "/src/assets/torii-gate-solid.svg", matched: false },
-  { src: "/src/assets/umbrella-beach-solid.svg", matched: false },
-  { src: "/src/assets/user-astronaut-solid.svg", matched: false },
-  { src: "/src/assets/laptop-code-solid.svg", matched: false },
-  { src: "/src/assets/volleyball-solid.svg", matched: false },
+  { src: images.atom, matched: false },
+  { src: images.baseball, matched: false },
+  { src: images.bowling, matched: false },
+  { src: images.droplet, matched: false },
+  { src: images.fan, matched: false },
+  { src: images.gear, matched: false },
+  { src: images.meteor, matched: false },
+  { src: images.moon, matched: false },
+  { src: images.satellite, matched: false },
+  { src: images.seedling, matched: false },
+  { src: images.shield, matched: false },
+  { src: images.shuttle, matched: false },
+  { src: images.snowflake, matched: false },
+  { src: images.torii, matched: false },
+  { src: images.umbrella, matched: false },
+  { src: images.astronaut, matched: false },
+  { src: images.laptop, matched: false },
+  { src: images.volleyball, matched: false },
 ];
 
 const gameNumbers = [

@@ -93,11 +93,11 @@ function GameStarted() {
             onClick={() => handleClick(item)}
             key={item.id}
             className={clsx(
-              item.matched && "bg-commonColor",
+              item.matched ? "bg-commonColor" : "bg-commonColor7",
               gridSize === "4x4"
                 ? "md:w-[7rem] md:h-[7rem] sm:w-[4.5rem] sm:h-[4.5rem] w-[3.5rem] h-[3.5rem]"
                 : "md:w-[5rem] md:h-[5rem] sm:w-[3rem] sm:h-[3rem] w-[2.5rem] h-[2.5rem]",
-              "flex justify-center items-center bg-commonColor7 rounded-full transition-all duration-500"
+              "flex justify-center items-center rounded-full transition-all duration-500"
             )}
           >
             <span
